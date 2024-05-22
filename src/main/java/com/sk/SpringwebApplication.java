@@ -1,5 +1,6 @@
 package com.sk;
 
+import com.sk.configuration.MyTestBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -14,7 +15,11 @@ public class SpringwebApplication extends SpringBootServletInitializer {
 	}
 
 	public static ConfigurableApplicationContext start(String[] args) {
-		return SpringApplication.run(SpringwebApplication.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(SpringwebApplication.class, args);
+		System.out.println("Started application ");
+		MyTestBean mtb = (MyTestBean) context.getBean("myBean");
+		mtb.testService.print();
+		return context;
 	}
 
 	public static void stop(ConfigurableApplicationContext configurableApplicationContext) {
@@ -23,6 +28,9 @@ public class SpringwebApplication extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		builder.profiles("default");
 		return builder.sources(SpringwebApplication.class);
 	}
 }
+
+

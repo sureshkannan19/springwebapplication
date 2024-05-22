@@ -1,11 +1,10 @@
 package com.sk.mapper;
 
-import java.util.List;
-
-import org.mapstruct.Mapper;
-
 import com.sk.entity.Users;
 import com.sk.model.UsersModel;
+import org.mapstruct.Mapper;
+
+import java.util.List;
 
 @Mapper(componentModel = "spring", implementationName = "UserMapperImpl")
 public interface UserMapper {

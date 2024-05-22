@@ -3,3 +3,12 @@
 
 # Ignore Gradle build output directory
 build
+/.idea/.gitignore
+/target/karate-reports/
+/.idea/compiler.xml
+/bin/test/
+/.idea/gradle.xml
+/target/karate.log
+/.idea/modules.xml
+/.idea/uiDesigner.xml
+/.idea/vcs.xml
