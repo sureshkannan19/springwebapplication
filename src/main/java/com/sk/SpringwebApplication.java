@@ -32,5 +32,3 @@ public class SpringwebApplication extends SpringBootServletInitializer {
 		return builder.sources(SpringwebApplication.class);
 	}
 }
-
-
